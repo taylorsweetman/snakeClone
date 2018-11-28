@@ -8,6 +8,8 @@ import wormgame.Direction;
 import wormgame.domain.Apple;
 import wormgame.domain.Piece;
 import wormgame.domain.Worm;
+import wormgame.gui.DrawingBoard;
+import wormgame.gui.KeyboardListener;
 import wormgame.gui.Updatable;
 
 public class WormGame extends Timer implements ActionListener {
@@ -27,15 +29,16 @@ public class WormGame extends Timer implements ActionListener {
 
         this.width = width;
         this.height = height;
-        this.continues = true;
         this.worm = new Worm(this.width / 2, this.height / 2, Direction.DOWN);
         this.apple = createRandomApple();
+        continues = true;
+
 
         addActionListener(this);
         setInitialDelay(2000);
-
     }
 
+    
     public final Apple createRandomApple() {
         Apple returnApple = new Apple(myRandom.nextInt(width), myRandom.nextInt(height));
 
@@ -79,9 +82,10 @@ public class WormGame extends Timer implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (!continues) {
+        if (continues == false) {
             return;
         } else {
+            
             worm.move();
 
             if (worm.runsInto(apple)) {

@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         // write test code here
-        WormGame game = new WormGame(20, 20);
+        WormGame game = new WormGame(100, 100);
 
         UserInterface ui = new UserInterface(game, 20);
         SwingUtilities.invokeLater(ui);
