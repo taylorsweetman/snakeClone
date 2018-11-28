@@ -29,7 +29,7 @@ public class KeyboardListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (1) {
+        switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
                 worm.setDirection(Direction.UP);
                 break;

@@ -5,6 +5,9 @@
  */
 package wormgame.domain;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author taylo

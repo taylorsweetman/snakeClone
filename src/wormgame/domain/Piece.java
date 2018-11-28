@@ -5,6 +5,8 @@
  */
 package wormgame.domain;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author taylo
@@ -30,7 +32,7 @@ public class Piece {
     public boolean runsInto(Piece piece) {
         return x == piece.getX() && y == piece.getY();
     }
-
+    
     @Override
     public String toString() {
         return "(" + x + "," + y + ")";

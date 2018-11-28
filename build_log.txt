@@ -99,6 +99,9 @@ deps-jar:
 -compile-depend:
 
 -do-compile:
+    [javac] Compiling 8 source files to C:\Users\Taylor\Documents\NetBeansProjects\mooc-2013-OOProgrammingWithJava-PART2\week12-week12_49.WormGame\build\classes
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
+    [javac] 1 warning
 
 -post-compile:
 
@@ -125,4 +128,4 @@ compile:
 compile-test:
 
 BUILD SUCCESSFUL
-Total time: 5 seconds
+Total time: 8 seconds
