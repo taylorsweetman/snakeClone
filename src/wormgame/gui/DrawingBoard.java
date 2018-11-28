@@ -15,7 +15,7 @@ import wormgame.domain.*;
  *
  * @author taylo
  */
-public class DrawingBoard extends JPanel implements Updatable{
+public class DrawingBoard extends JPanel implements Updatable {
 
     private WormGame wormGame;
     private int pieceLength;
@@ -32,17 +32,16 @@ public class DrawingBoard extends JPanel implements Updatable{
         g.setColor(Color.red);
         g.fillOval(appleObject.getX(), appleObject.getY(), pieceLength, pieceLength);
         //need to implement painting of the worm
+        g.setColor(Color.black);
+
+        for (Piece wormPiece : wormGame.getWorm().getPieces()) {
+            g.fill3DRect(wormPiece.getX(), wormPiece.getY(), pieceLength, pieceLength, true);
+        }
     }
 
     @Override
     public void update() {
         super.repaint();
     }
-    
-    
-    
-    
-    
-    
 
 }
