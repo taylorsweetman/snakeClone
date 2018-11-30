@@ -36,11 +36,8 @@ public class UserInterface implements Runnable {
     }
 
     public void createComponents(Container container) {
-        // Create drawing board first which then is added into container-object.
-        // After this, create keyboard listener which is added into frame-object
         container.add(drawingBoard);
 
-        //need to add keyboard listener
         KeyboardListener listener = new KeyboardListener(game.getWorm());
         frame.addKeyListener(listener);
     }

@@ -33,12 +33,10 @@ public class WormGame extends Timer implements ActionListener {
         this.apple = createRandomApple();
         continues = true;
 
-
         addActionListener(this);
         setInitialDelay(2000);
     }
 
-    
     public final Apple createRandomApple() {
         Apple returnApple = new Apple(myRandom.nextInt(width), myRandom.nextInt(height));
 
@@ -85,7 +83,7 @@ public class WormGame extends Timer implements ActionListener {
         if (continues == false) {
             return;
         } else {
-            
+
             worm.move();
 
             if (worm.runsInto(apple)) {
@@ -99,7 +97,6 @@ public class WormGame extends Timer implements ActionListener {
             }
 
             updatable.update();
-
             setDelay(1000 / worm.getLength());
         }
 
@@ -111,13 +108,13 @@ public class WormGame extends Timer implements ActionListener {
 
         switch (currentDir) {
             case UP:
-                return head.getY() == 0;
+                return head.getY() < 0;
             case DOWN:
-                return head.getY() == height - 1;
+                return head.getY() > height - 1;
             case RIGHT:
-                return head.getX() == width - 1;
+                return head.getX() > width - 1;
             case LEFT:
-                return head.getX() == 0;
+                return head.getX() < 0;
             default:
                 return false;
         }

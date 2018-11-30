@@ -7,6 +7,7 @@ package wormgame.gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import wormgame.game.WormGame;
 import wormgame.domain.*;
@@ -27,15 +28,14 @@ public class DrawingBoard extends JPanel implements Updatable {
 
     @Override
     protected void paintComponent(Graphics g) {
-        //paint the apple
+        super.paintComponent(g);
         Apple appleObject = wormGame.getApple();
         g.setColor(Color.red);
-        g.fillOval(appleObject.getX(), appleObject.getY(), pieceLength, pieceLength);
-        //need to implement painting of the worm
+        g.fillOval(appleObject.getX() * pieceLength, appleObject.getY() * pieceLength, pieceLength, pieceLength);
         g.setColor(Color.black);
 
         for (Piece wormPiece : wormGame.getWorm().getPieces()) {
-            g.fill3DRect(wormPiece.getX(), wormPiece.getY(), pieceLength, pieceLength, true);
+            g.fill3DRect(wormPiece.getX() * pieceLength, wormPiece.getY() * pieceLength, pieceLength, pieceLength, true);
         }
     }
 
